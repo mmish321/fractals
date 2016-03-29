@@ -7,7 +7,6 @@ import draw.StdDraw;
 public class SquareFractal {
 
 	private double shrink = 0.5;
-	
 	public SquareFractal() {
 		StdDraw.setXscale(0, 150); 
 		StdDraw.setYscale(0, 150); 
@@ -20,9 +19,7 @@ public class SquareFractal {
 		StdDraw.show();
 	}
 	
-	
 	public void fractal(Square square, int n, Color color) {
-		// TODO: modify to produce examples/Square/pic1, pic2, and pic3
 		
 		if (n <= 0) return;
 		
@@ -37,13 +34,13 @@ public class SquareFractal {
 		int blue  = Math.max(0, (int)(color.getBlue()-(255*.10)));
 		
 		Color nextColor = new Color(red, green, blue);
-		
+		fractal(bottomRight, n -1, nextColor);
 		square.draw(color);
 		
 		fractal(topLeft,     n-1, nextColor);
 		fractal(topRight,    n-1, nextColor);
 		fractal(bottomLeft,  n-1, nextColor);
-		fractal(bottomRight, n-1, nextColor);
+		
 	}
 	
 	
