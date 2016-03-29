@@ -34,12 +34,13 @@ public class SquareFractal {
 		int blue  = Math.max(0, (int)(color.getBlue()-(255*.10)));
 		
 		Color nextColor = new Color(red, green, blue);
-		fractal(bottomRight, n -1, nextColor);
+		fractal(bottomLeft,  n-1, nextColor);
 		square.draw(color);
 		
 		fractal(topLeft,     n-1, nextColor);
 		fractal(topRight,    n-1, nextColor);
-		fractal(bottomLeft,  n-1, nextColor);
+		
+		fractal(bottomRight, n -1, nextColor);
 		
 	}
 	
