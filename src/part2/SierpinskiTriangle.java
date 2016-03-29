@@ -9,7 +9,7 @@ public class SierpinskiTriangle {
 	private Point2D.Double top, right, left;
 	private Color background = new Color(34, 129, 34);
 	private Color foreground = StdDraw.YELLOW;
-	
+
 	public SierpinskiTriangle() {
 		StdDraw.setXscale(0, 150); 
 		StdDraw.setYscale(75, 150); 
@@ -22,11 +22,18 @@ public class SierpinskiTriangle {
 	}
    
 	public void sierpinski(Point2D.Double a, Point2D.Double b, Point2D.Double c, int n) {
-	   // TODO: implement
+	  if (n <= 0) return;
+	  Color newColor = (n % 2 == 0) ? Color.GREEN : Color.YELLOW;
+	  drawTriangle(a,b,c, newColor );
+	  top = new Point2D.Double(((b.x + c.x)/ 4,  );
+	  right = new Point2D.Double(b.x/2, b.y/2);
+	  left = new Point2D.Double(c.x/2, c.y/2);
+	  sierpinski(top,right ,left , n-1);
+	  
     }
    
 	public void drawTriangle(Point2D.Double a, Point2D.Double b, Point2D.Double c, Color color) {
-	   double[] x = {a.x, b.x, c.x};
+	   double[] x = {a.x, b.x  , c.x };
 	   double[] y = {a.y, b.y, c.y};
 	   StdDraw.setPenColor(color);
 	   StdDraw.filledPolygon(x, y);
