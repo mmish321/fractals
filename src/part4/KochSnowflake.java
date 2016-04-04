@@ -8,13 +8,15 @@ public class KochSnowflake {
 
 	public static void main(String[] args) {
 		KochSnowflake help = new KochSnowflake();
-		
+		help.draw();
 	}
 	public KochSnowFlake() {
 		StdDraw.setXscale(0, 150);
 		StdDraw.setYscale(0, 150);
 		StdDraw.clear(StdDraw.RED);
 	}
- 
+  public draw() {
+	  
+  }
 
 }
