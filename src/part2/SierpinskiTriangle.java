@@ -6,7 +6,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionListener;
 import java.awt.geom.Point2D;
 
-import draw.StdDraw;
+
 import draw.UltraDraw;
 
 public class SierpinskiTriangle implements MouseListener, MouseMotionListener{
